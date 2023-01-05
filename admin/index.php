@@ -10,9 +10,9 @@ require("../config/commandes.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -21,7 +21,6 @@ require("../config/commandes.php");
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
 
 <!--Formulaire-->
 
@@ -49,11 +48,11 @@ require("../config/commandes.php");
 </div>
 </div>
 </div>
-
 </body>
 </html>
 
 <?php
+
 
 if(isset($_POST['valider']))
 
@@ -75,11 +74,13 @@ $nom = htmlspecialchars(strip_tags($_POST['nom']));
 $prix= htmlspecialchars(strip_tags($_POST['prix']));
 $desc= htmlspecialchars(strip_tags($_POST['desc']));
 
-
+echo' <style> p { text-align:center;color:red}</style>
+<p>Le produit a été ajouter avec succès!</p>';
 
 try {
 
  ajouter($image,$nom,$prix,$desc);
+
 
 }catch (Exception $e) {
 
@@ -90,4 +91,5 @@ try {
 }
 }
 ?>
+
 

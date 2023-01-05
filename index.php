@@ -1,8 +1,8 @@
 
 <?php
-require("./config/commandes.php");
+require("config/commandes.php");
 
-$produits = afficher();
+$Produits = afficher();
 ?>
 
 <!doctype html>
@@ -17,16 +17,22 @@ $produits = afficher();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
-    <title>Album example · Bootstrap v5.2</title>
 
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#712cf9">
+    <style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
 
   </head>
   <body>
@@ -44,7 +50,7 @@ $produits = afficher();
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Signe in</h4>
           <ul class="list-unstyled">
-            <li><a href="admin/index.php" class="text-white">Connexion</a></li>
+            <li><a href="supprimer.php" class="text-white">Se connecter</a></li>
           </ul>
         </div>
       </div>
@@ -69,22 +75,22 @@ $produits = afficher();
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     
-<?php foreach($produits as $produit): ?>
+<?php foreach($Produits as $produit): ?>
 
         <div class="col">
           <div class="card shadow-sm">
           <title><?= $produit->nom ?></title>
-          <img src="<?= $produit->image ?>">
+          <img src="<?= $produit->image ?>" style="width: 24%">
 
             <div class="card-body">
         
-              <p class="card-text"><?= substr($produit->description, 0,150); ?></p>
+            <p class="card-text"><?= substr($produit->description, 0, 160); ?>...</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button>
                   
                 </div>
-                <small class="text-muted"><?= $produit->prix ?>€</small>
+                <small class="text" style="font-weight:bold;"><?= $produit->prix ?>€</small>
               </div>
             </div>
           </div>

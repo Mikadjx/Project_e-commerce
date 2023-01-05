@@ -13,12 +13,15 @@ if(require("connexion.php"))
 {
     //Effectuer la requête : Inseré dans la table produits les valueur de chaque colonne 
 
-$req = $access->prepare("INSERT INTO produits (image,nom,prix,description) VALUES('$image','$nom','$prix','$desc')");
+$req = $access->prepare("INSERT INTO produits (image,nom,prix,description) VALUES(?,?,?,?)");
 
 $req->execute(array($image,$nom,$prix,$desc));
 
 
+
 $req->closeCursor();
+
+
 
 }
 }
@@ -38,6 +41,8 @@ function afficher()
         $req->execute();
         
         $data=$req->fetchall(PDO::FETCH_OBJ);
+        
+
 
 return $data;
 
@@ -57,6 +62,7 @@ function supprimer($id)
     {
         $req = $access->prepare("DELETE FROM produits WHERE id =?");
         $req->execute(array($id));
+        $req->closeCursor();
     }
 
 }
