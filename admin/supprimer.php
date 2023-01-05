@@ -1,5 +1,17 @@
 
 <?php
+session_start();
+
+if(!isset($_SESSION['zWuppkg'])){
+  header("Location: ../login.php");
+}
+if(empty($_SESSION['zWuppkg'])){
+  header("Location: ../login.php");
+}
+
+
+
+
 require("../config/commandes.php");
 $Produits = afficher();
 ?>

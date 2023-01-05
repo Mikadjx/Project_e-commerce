@@ -3,6 +3,7 @@
 
 <?PHP
 
+
 // CREATE //
 
 function ajouter($image,$nom,$prix,$desc)
@@ -66,5 +67,43 @@ function supprimer($id)
     }
 
 }
+
+
+
+
+//Fonction pour récuperer le mail et mot de passe utilisateur //
+
+function getAdmin($email, $password) {
+
+    if(require("connexion.php")){
+
+ 
+$req = $access->prepare("SELECT * FROM admin WHERE id=77");
+
+$req->execute();
+
+if($req->rowCount() == 1) {
+    $data = $req-> fetchAll(PDO::FETCH_OBJ);
+
+    foreach($data as $i){
+        $mail = $i->email;
+        $mdp = $i->motdepasse;
+      }
+
+
+
+    if($mail == $email AND $mdp == $password)
+    {
+      return $data;
+    }
+    else{
+        return false;
+
+}
+}
+    }
+}
+
+
 
 ?>

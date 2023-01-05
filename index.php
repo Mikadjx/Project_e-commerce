@@ -44,13 +44,13 @@ $Produits = afficher();
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">About</h4>
+          <h4 class="text-white">A propos</h4>
           <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Signe in</h4>
+          <h4 class="text-white">Connexion</h4>
           <ul class="list-unstyled">
-            <li><a href="supprimer.php" class="text-white">Se connecter</a></li>
+            <li><a href="login.php" class="text-white">Se connecter</a></li>
           </ul>
         </div>
       </div>
@@ -119,4 +119,7 @@ $Produits = afficher();
 
 
 
-<!--Projet ecommerce sur youtuve : https://www.youtube.com/watch?v=U8tgZHUItkg -->
+<!--Projet ecommerce sur youtuve : https://www.youtube.com/watch?v=U8tgZHUItkg
+ Partie 2 : https://www.youtube.com/watch?v=fAPfudZF-io&t=0s&ab_channel=HegelMotokoua
+-->
+                          
