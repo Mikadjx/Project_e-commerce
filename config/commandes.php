@@ -84,8 +84,31 @@ function getAdmin($email, $motdepasse)
             } else {
                 return false;
             }
+            $req->closeCursor();
         }
     }
 }
+
+
+
+function getProduit($id) 
+{
+
+    if (require("connexion.php")) {
+
+        $req = $access->prepare("SELECT * FROM produits WHERE id=?");
+
+        $req->execute(array($id));
+
+        if ($req->rowCount() == 1) {
+            $data = $req->fetchAll(PDO::FETCH_OBJ);
+
+        return $data;
+            } else {
+                return false;
+            }
+            $req->closeCursor();
+        }
+    }
 
 ?>

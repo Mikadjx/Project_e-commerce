@@ -28,37 +28,36 @@ $Produits = afficher();
     <title>Document</title>
 </head>
 
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Administration</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../Admin">Nouveau</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" href="supprimer.php">Suppression</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="afficher.php">Produits</a>
+        </li>
+      </ul>
+      <div style="display:flex; justify-content: flex-end;">
+        <a href="deconnexion.php" class="btn btn-danger">Se deconnecter</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Administration</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../admin/afficher.php">Produits</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../admin/">Nouveau</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" style="font-weight: bold;" href="supprimer.php">Suppression</a>
-                    </li>
+ 
 
-                </ul>
-
-                <div style="margin-right: 500px">
-                    <h5 style="color: #545659; opacity: 0.5;">Connecté en tant que:</h5>
-                </div>
-
-                <a class="btn btn-danger d-flex" style="display: flex; justify-content: flex-end;" href="destroy.php">Se deconnecter</a>
-
-            </div>
-        </div>
-    </nav>
 
     <div class="album py-5 bg-light">
         <div class="container">
@@ -75,7 +74,7 @@ $Produits = afficher();
                             <input type="number" class="form-control" name="idproduit" required>
                         </div>
 
-                        <button type="submit" name="valider" class="btn btn-primary">Supprimer le nouveau produit</button>
+                        <button type="submit" name="valider" class="btn btn-warning">Supprimer le nouveau produit</button>
                 </form>
 
             </div>
