@@ -121,5 +121,6 @@ $Produits = afficher();
 
 <!--Projet ecommerce sur youtuve : https://www.youtube.com/watch?v=U8tgZHUItkg
  Partie 2 : https://www.youtube.com/watch?v=fAPfudZF-io&t=0s&ab_channel=HegelMotokoua
+ extension indentation php : PHP Intelephense   ->  Shift+Alt+F
 -->
                           

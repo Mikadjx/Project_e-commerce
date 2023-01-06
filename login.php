@@ -2,8 +2,6 @@
 session_start();
 include("config/commandes.php");
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +61,7 @@ include("config/commandes.php");
 
 <?php 
 
-if(isset($_post['envoyer'])){
+if(isset($_POST['envoyer'])){
  if(!empty($_POST['email']) AND !empty($_POST['motdepasse'])){
     $email= htmlspecialchars($_POST['email']);
     $motdepasse= htmlspecialchars($_POST['motdepasse']);
@@ -73,7 +71,7 @@ if(isset($_post['envoyer'])){
 
    if($admin) {
 
-    $_SESSION["zWuppkg"] = $admin;
+    $_SESSION['zWuppkg'] = $admin;
 
     header("Location: admin/");
 
